@@ -47,19 +47,19 @@ class DHT:
         sensor = dht.DHT11(Pin(0, Pin.IN, Pin.PULL_UP))
         
         
-def humm():
-    '''
-    Возвращает влажность с датчика от 0 до 95...
-    '''
-    try:
-        sensor = dht.DHT11(Pin(0, Pin.IN, Pin.PULL_UP)) # инициалицация сенсора
-        sleep(1) # спим сикунду что бы собрать более точные данные
-        sensor.measure() # что то там важное, толи сбор данных с датчика
-        hum =  sensor.humidity() # конкретно влажность
-        return hum
-    except Exception as e:
-        err()
-        print(e)
+    def humm():
+        '''
+        Возвращает влажность с датчика от 0 до 95...
+        '''
+        try:
+            sensor = dht.DHT11(Pin(0, Pin.IN, Pin.PULL_UP)) # инициалицация сенсора
+            sleep(1) # спим сикунду что бы собрать более точные данные
+            sensor.measure() # что то там важное, толи сбор данных с датчика
+            hum =  sensor.humidity() # конкретно влажность
+            return hum
+        except Exception as e:
+            err()
+            print(e)
         
 # Time control      
 class Real_time:
